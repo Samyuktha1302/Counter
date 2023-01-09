@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter app</title>
+    <style>
+        body{
+            background-color: rgb(192, 211, 226);
+        }
+        .container{
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            background-color: grey;
+            font-size:30px ;
+            padding: 10px 20px;
+            margin: 10px;
+        }
+        .counter{
+            font-size: 40px;
+            color: black;
+            margin: 20px 0px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="counter">0</span>
+        <div>
+            <button id="increment" onclick="changeCounter(increment)">increment</button>
+            <button id="decrement" onclick="changeCounter(decrement)">decrement</button>
+        </div>
+        <button id="reset" onclick="changeCounter(reset)">reset </button>
+    </div>
+    <script>
+        var counter = document.querySelector('.counter');
+        let count = 0;
+        function changeCounter(button)
+        {
+            if (button == increment){
+                count += 1;
+            }
+            else if (button == decrement){
+                count -= 1;
+            }
+            else if (button == reset){
+                count = 0;
+            }
+            counter.innerHTML = count;
+        }
+    </script>
+</body>
+</html>
